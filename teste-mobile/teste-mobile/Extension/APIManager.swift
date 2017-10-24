@@ -31,7 +31,7 @@ class APIManager {
     
     static func getRequest(forUrl url: String, withParameters parameters: [String : Any]? = nil, inBody:Bool=false, haveHeader: Bool? = nil, completion: @escaping (_ success: Bool, _ message: String?, _ response: Dictionary<String, AnyObject>?) -> Void) {
         
-        //var header = generateHeaderRequest(haveHeader)
+//        var header = generateHeaderRequest(haveHeader)
         
         var enconding:ParameterEncoding = URLEncoding.default
         
