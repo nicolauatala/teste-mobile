@@ -7,3 +7,22 @@
 //
 
 import Foundation
+
+protocol ListVideosView: NSObjectProtocol {
+    func setListVideos(videos: [Video]?, message: String?)
+}
+
+class HomePresenter {
+    
+    weak private var listVideosView: ListVideosView?
+    
+    func setViewDelegate(_ view: ListVideosView){
+        self.listVideosView = view
+    }
+    
+    func getVideos(with keywords: String) {
+        HomeService.getListVideos { (videos, message) in
+            self.listVideosView?.setListVideos(videos: videos, message: message)
+        }
+    }
+}

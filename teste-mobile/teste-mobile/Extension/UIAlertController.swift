@@ -10,8 +10,8 @@ import UIKit
 
 class Alert {
     
-    static func showMessage(message: String?) -> UIAlertController {
-        let alert = UIAlertController(title: "Atenção", message: message, preferredStyle: .alert)
+    static func showMessage(title: String?, message: String?) -> UIAlertController {
+        let alert = UIAlertController(title: title ?? "Atenção", message: message, preferredStyle: .alert)
         let okButton = UIAlertAction(title: "Ok", style: .default) { (alertAction) in
             alert.dismiss(animated: true, completion: nil)
         }

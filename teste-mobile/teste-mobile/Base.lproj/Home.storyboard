@@ -13,7 +13,7 @@
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="madeInWeb" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="teste_mobile" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -22,63 +22,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="madeinweb" translatesAutoresizingMaskIntoConstraints="NO" id="x2M-UG-SP8">
-                                <rect key="frame" x="49" y="166.5" width="277.5" height="107"/>
-                            </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Pesquisar" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Ir-Ul-AnO">
-                                <rect key="frame" x="49" y="307" width="277.5" height="53"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.74117647060000003" green="0.7843137255" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j7A-sn-QpB">
-                                <rect key="frame" x="49" y="373.5" width="277.5" height="53"/>
-                                <color key="backgroundColor" red="0.0" green="0.6705882353" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
-                                <color key="tintColor" red="0.96862745100000003" green="0.98039215690000003" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Buscar">
-                                    <color key="titleColor" red="0.96862745100000003" green="0.98039215690000003" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="search:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Gk-bA-2Gf"/>
-                                </connections>
-                            </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="LdJ-E8-Rs8">
-                                <rect key="frame" x="290.5" y="390" width="20" height="20"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nv6-pb-YFv">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="madeinweb" translatesAutoresizingMaskIntoConstraints="NO" id="x2M-UG-SP8">
+                                        <rect key="frame" x="52" y="147" width="270" height="93"/>
+                                    </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Pesquisar" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Ir-Ul-AnO">
+                                        <rect key="frame" x="37" y="290" width="300" height="47"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.74117647060000003" green="0.7843137255" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j7A-sn-QpB">
+                                        <rect key="frame" x="37" y="343.5" width="300" height="47"/>
+                                        <color key="backgroundColor" red="0.0" green="0.6705882353" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                        <color key="tintColor" red="0.96862745100000003" green="0.98039215690000003" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Buscar">
+                                            <color key="titleColor" red="0.96862745100000003" green="0.98039215690000003" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="search:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Gk-bA-2Gf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="Sbs-WB-Vul"/>
-                                    <constraint firstAttribute="height" constant="20" id="rt3-e7-MGf"/>
+                                    <constraint firstItem="x2M-UG-SP8" firstAttribute="centerY" secondItem="Nv6-pb-YFv" secondAttribute="centerY" multiplier="0.58" id="152-Wt-hC8"/>
+                                    <constraint firstItem="7Ir-Ul-AnO" firstAttribute="height" secondItem="Nv6-pb-YFv" secondAttribute="height" multiplier="0.07" id="1cZ-BV-rzT"/>
+                                    <constraint firstItem="x2M-UG-SP8" firstAttribute="centerX" secondItem="Nv6-pb-YFv" secondAttribute="centerX" id="HCH-Ad-0lr"/>
+                                    <constraint firstItem="j7A-sn-QpB" firstAttribute="centerY" secondItem="Nv6-pb-YFv" secondAttribute="centerY" multiplier="1.1" id="Kht-o3-2kX"/>
+                                    <constraint firstItem="j7A-sn-QpB" firstAttribute="width" secondItem="Nv6-pb-YFv" secondAttribute="width" multiplier="0.8" id="Quh-hM-8Bh"/>
+                                    <constraint firstItem="x2M-UG-SP8" firstAttribute="height" secondItem="Nv6-pb-YFv" secondAttribute="height" multiplier="0.14" id="WkO-ii-Qw9"/>
+                                    <constraint firstItem="x2M-UG-SP8" firstAttribute="width" secondItem="Nv6-pb-YFv" secondAttribute="width" multiplier="0.72" id="bYe-Rq-xYx"/>
+                                    <constraint firstItem="j7A-sn-QpB" firstAttribute="height" secondItem="Nv6-pb-YFv" secondAttribute="height" multiplier="0.07" id="eRJ-30-jY4"/>
+                                    <constraint firstItem="j7A-sn-QpB" firstAttribute="centerX" secondItem="Nv6-pb-YFv" secondAttribute="centerX" id="eTo-vh-D5L"/>
+                                    <constraint firstItem="7Ir-Ul-AnO" firstAttribute="centerY" secondItem="Nv6-pb-YFv" secondAttribute="centerY" multiplier="0.94" id="gg0-XH-vNr"/>
+                                    <constraint firstItem="7Ir-Ul-AnO" firstAttribute="width" secondItem="Nv6-pb-YFv" secondAttribute="width" multiplier="0.8" id="jCt-QV-3un"/>
+                                    <constraint firstItem="7Ir-Ul-AnO" firstAttribute="centerX" secondItem="Nv6-pb-YFv" secondAttribute="centerX" id="lT8-Mo-Ri2"/>
                                 </constraints>
-                            </activityIndicatorView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="j7A-sn-QpB" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.08" id="2Co-4n-32P"/>
-                            <constraint firstItem="j7A-sn-QpB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2N2-El-R92"/>
-                            <constraint firstItem="7Ir-Ul-AnO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7Cs-aN-a0j"/>
-                            <constraint firstItem="j7A-sn-QpB" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.74" id="Gs9-Px-QdK"/>
-                            <constraint firstItem="j7A-sn-QpB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.2" id="J7a-vC-EVT"/>
-                            <constraint firstItem="LdJ-E8-Rs8" firstAttribute="trailing" secondItem="j7A-sn-QpB" secondAttribute="trailing" constant="-16" id="KwM-cx-kkt"/>
-                            <constraint firstItem="x2M-UG-SP8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.66" id="Lp2-xV-9Eo"/>
-                            <constraint firstItem="x2M-UG-SP8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="P9e-O6-6eA"/>
-                            <constraint firstItem="7Ir-Ul-AnO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="PDj-H3-Azo"/>
-                            <constraint firstItem="7Ir-Ul-AnO" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.08" id="Qwu-3K-zR3"/>
-                            <constraint firstItem="x2M-UG-SP8" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.74" id="atg-em-MBM"/>
-                            <constraint firstItem="LdJ-E8-Rs8" firstAttribute="centerY" secondItem="j7A-sn-QpB" secondAttribute="centerY" id="oaK-8N-wQG"/>
-                            <constraint firstItem="x2M-UG-SP8" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.16" id="qLz-8X-sCH"/>
-                            <constraint firstItem="7Ir-Ul-AnO" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.74" id="sYo-p8-93q"/>
+                            <constraint firstItem="Nv6-pb-YFv" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="K7g-6S-REB"/>
+                            <constraint firstItem="Nv6-pb-YFv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QJf-E5-Ai7"/>
+                            <constraint firstItem="Nv6-pb-YFv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Xhb-Sq-u7V"/>
+                            <constraint firstItem="Nv6-pb-YFv" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="j5v-Pi-V9x"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="indicatorView" destination="LdJ-E8-Rs8" id="g8s-gr-BX4"/>
                         <outlet property="searchButton" destination="j7A-sn-QpB" id="AWV-cE-XOm"/>
                         <outlet property="searchTextField" destination="7Ir-Ul-AnO" id="l43-em-rzg"/>
                     </connections>

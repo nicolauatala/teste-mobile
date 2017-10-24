@@ -7,17 +7,20 @@
 //
 
 import UIKit
+import PKHUD
 
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
-    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
+    
+    fileprivate let presenter = HomePresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        indicatorView.stopAnimating()
+        self.hideKeyboardWhenTappedAround() 
         setCornerRadius()
+        presenter.setViewDelegate(self)
     }
     
     func setCornerRadius(){
@@ -28,15 +31,26 @@ class HomeViewController: UIViewController {
     }
 
     @IBAction func search(_ sender: Any) {
-        indicatorView.startAnimating()
-        indicatorView.isHidden = !indicatorView.isHidden
+        HUD.show(.rotatingImage(#imageLiteral(resourceName: "progress")))
         
-        if !(searchTextField.text?.isEmpty)! {
-            //search
-        } else {
-            present(Alert.showMessage(message: "Campo vazio, informe o "), animated: true, completion: nil)
+        if let text = searchTextField.text {
+            if !text.isEmpty {
+                presenter.getVideos(with: text)
+            } else {
+                HUD.hide()
+                present(Alert.showMessage(title: "Campo vazio", message: "Para continuar, informe as palavras chaves."), animated: true, completion: nil)
+            }
         }
     }
-
 }
 
+extension HomeViewController: ListVideosView {
+    func setListVideos(videos: [Video]?, message: String?) {
+        HUD.hide()
+        if videos?.count != 0 {
+            
+        } else {
+            present(Alert.showMessage(title: "Ops!", message: "Erro, tente novamente."), animated: true, completion: nil)
+        }
+    }
+}
