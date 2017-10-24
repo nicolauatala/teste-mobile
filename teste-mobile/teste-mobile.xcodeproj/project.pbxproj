@@ -12,6 +12,13 @@
 		890A35F81F9FB72300AA1089 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 890A35F61F9FB72300AA1089 /* Main.storyboard */; };
 		890A35FA1F9FB72300AA1089 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 890A35F91F9FB72300AA1089 /* Assets.xcassets */; };
 		890A35FD1F9FB72300AA1089 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 890A35FB1F9FB72300AA1089 /* LaunchScreen.storyboard */; };
+		890A360D1F9FBCD300AA1089 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890A36061F9FBCD300AA1089 /* APIManager.swift */; };
+		890A360E1F9FBCD300AA1089 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890A36071F9FBCD300AA1089 /* NavigationBar.swift */; };
+		890A360F1F9FBCD300AA1089 /* NavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890A36081F9FBCD300AA1089 /* NavigationBar.xib */; };
+		890A36101F9FBCD300AA1089 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890A36091F9FBCD300AA1089 /* NetworkReachability.swift */; };
+		890A36111F9FBCD300AA1089 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890A360A1F9FBCD300AA1089 /* UIAlertController.swift */; };
+		890A36121F9FBCD300AA1089 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890A360B1F9FBCD300AA1089 /* UILabel+Extension.swift */; };
+		890A36131F9FBCD300AA1089 /* ViewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890A360C1F9FBCD300AA1089 /* ViewUtil.swift */; };
 		E23406D554186615E42FDD14 /* Pods_teste_mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4158AD92521240D37651C8F1 /* Pods_teste_mobile.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +31,13 @@
 		890A35F91F9FB72300AA1089 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		890A35FC1F9FB72300AA1089 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		890A35FE1F9FB72300AA1089 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		890A36061F9FBCD300AA1089 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIManager.swift; path = Extension/APIManager.swift; sourceTree = "<group>"; };
+		890A36071F9FBCD300AA1089 /* NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationBar.swift; path = Extension/NavigationBar.swift; sourceTree = "<group>"; };
+		890A36081F9FBCD300AA1089 /* NavigationBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NavigationBar.xib; path = Extension/NavigationBar.xib; sourceTree = "<group>"; };
+		890A36091F9FBCD300AA1089 /* NetworkReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkReachability.swift; path = Extension/NetworkReachability.swift; sourceTree = "<group>"; };
+		890A360A1F9FBCD300AA1089 /* UIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIAlertController.swift; path = Extension/UIAlertController.swift; sourceTree = "<group>"; };
+		890A360B1F9FBCD300AA1089 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UILabel+Extension.swift"; path = "Extension/UILabel+Extension.swift"; sourceTree = "<group>"; };
+		890A360C1F9FBCD300AA1089 /* ViewUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewUtil.swift; path = Extension/ViewUtil.swift; sourceTree = "<group>"; };
 		BE76D76D81DA4D90ED5B85A2 /* Pods-teste-mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-teste-mobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-teste-mobile/Pods-teste-mobile.debug.xcconfig"; sourceTree = "<group>"; };
 		CCBDF50F833B636DC77EFCD9 /* Pods-teste-mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-teste-mobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-teste-mobile/Pods-teste-mobile.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,6 +75,7 @@
 		890A35F11F9FB72300AA1089 /* teste-mobile */ = {
 			isa = PBXGroup;
 			children = (
+				890A36051F9FBCC300AA1089 /* Extension */,
 				890A35F21F9FB72300AA1089 /* AppDelegate.swift */,
 				890A35F41F9FB72300AA1089 /* ViewController.swift */,
 				890A35F61F9FB72300AA1089 /* Main.storyboard */,
@@ -69,6 +84,20 @@
 				890A35FE1F9FB72300AA1089 /* Info.plist */,
 			);
 			path = "teste-mobile";
+			sourceTree = "<group>";
+		};
+		890A36051F9FBCC300AA1089 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				890A36061F9FBCD300AA1089 /* APIManager.swift */,
+				890A36071F9FBCD300AA1089 /* NavigationBar.swift */,
+				890A36081F9FBCD300AA1089 /* NavigationBar.xib */,
+				890A36091F9FBCD300AA1089 /* NetworkReachability.swift */,
+				890A360A1F9FBCD300AA1089 /* UIAlertController.swift */,
+				890A360B1F9FBCD300AA1089 /* UILabel+Extension.swift */,
+				890A360C1F9FBCD300AA1089 /* ViewUtil.swift */,
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 		8CF5AC17BFC3EE3002C85BF6 /* Frameworks */ = {
@@ -154,6 +183,7 @@
 				890A35FD1F9FB72300AA1089 /* LaunchScreen.storyboard in Resources */,
 				890A35FA1F9FB72300AA1089 /* Assets.xcassets in Resources */,
 				890A35F81F9FB72300AA1089 /* Main.storyboard in Resources */,
+				890A360F1F9FBCD300AA1089 /* NavigationBar.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,8 +248,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				890A360D1F9FBCD300AA1089 /* APIManager.swift in Sources */,
 				890A35F51F9FB72300AA1089 /* ViewController.swift in Sources */,
+				890A36131F9FBCD300AA1089 /* ViewUtil.swift in Sources */,
 				890A35F31F9FB72300AA1089 /* AppDelegate.swift in Sources */,
+				890A36121F9FBCD300AA1089 /* UILabel+Extension.swift in Sources */,
+				890A360E1F9FBCD300AA1089 /* NavigationBar.swift in Sources */,
+				890A36111F9FBCD300AA1089 /* UIAlertController.swift in Sources */,
+				890A36101F9FBCD300AA1089 /* NetworkReachability.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +421,7 @@
 				890A36031F9FB72300AA1089 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
