@@ -25,28 +25,67 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Lw-LL-vO4" customClass="NavigationBar" customModule="teste_mobile" customModuleProvider="target">
                                 <rect key="frame" x="-0.5" y="0.0" width="375" height="80"/>
-                                <color key="backgroundColor" red="0.93333333330000001" green="0.94509803920000002" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.88853922622457981" green="0.88853922622457981" blue="0.88853922622457981" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GUu-mo-6bz">
-                                <rect key="frame" x="0.0" y="80" width="375" height="587"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GUu-mo-6bz">
+                                <rect key="frame" x="0.0" y="147" width="375" height="520"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="1ja-io-spt" id="MVq-kB-jwF"/>
+                                    <outlet property="delegate" destination="1ja-io-spt" id="jge-Aj-fZ4"/>
+                                </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dqO-qK-S2l">
+                                <rect key="frame" x="0.0" y="80" width="375" height="67"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Pesquisar" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kIk-2W-bMq">
+                                        <rect key="frame" x="15" y="11" width="270" height="44"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" red="0.30980392159999998" green="0.3294117647" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQW-v8-ReR">
+                                        <rect key="frame" x="285" y="11" width="75" height="44"/>
+                                        <color key="backgroundColor" red="0.0" green="0.6705882353" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Buscar">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.88853922620000003" green="0.88853922620000003" blue="0.88853922620000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="aQW-v8-ReR" firstAttribute="centerY" secondItem="dqO-qK-S2l" secondAttribute="centerY" id="CRQ-p5-DUN"/>
+                                    <constraint firstItem="aQW-v8-ReR" firstAttribute="width" secondItem="dqO-qK-S2l" secondAttribute="width" multiplier="0.2" id="Cfd-ae-b1b"/>
+                                    <constraint firstItem="aQW-v8-ReR" firstAttribute="centerX" secondItem="dqO-qK-S2l" secondAttribute="centerX" multiplier="1.72" id="KVQ-XU-vvi"/>
+                                    <constraint firstItem="kIk-2W-bMq" firstAttribute="centerX" secondItem="dqO-qK-S2l" secondAttribute="centerX" multiplier="0.8" id="Nkk-8G-Op6"/>
+                                    <constraint firstItem="kIk-2W-bMq" firstAttribute="centerY" secondItem="dqO-qK-S2l" secondAttribute="centerY" id="R0b-W2-lrq"/>
+                                    <constraint firstItem="aQW-v8-ReR" firstAttribute="height" secondItem="dqO-qK-S2l" secondAttribute="height" multiplier="0.66" id="SlX-vB-NU4"/>
+                                    <constraint firstItem="kIk-2W-bMq" firstAttribute="width" secondItem="dqO-qK-S2l" secondAttribute="width" multiplier="0.72" id="fQZ-QG-wqX"/>
+                                    <constraint firstItem="kIk-2W-bMq" firstAttribute="height" secondItem="dqO-qK-S2l" secondAttribute="height" multiplier="0.66" id="j3L-lV-NxL"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="GUu-mo-6bz" firstAttribute="top" secondItem="dqO-qK-S2l" secondAttribute="bottom" id="0S5-3n-ou9"/>
+                            <constraint firstItem="GUu-mo-6bz" firstAttribute="leading" secondItem="0Zk-pG-4Dg" secondAttribute="leading" id="1NM-HS-DyT"/>
+                            <constraint firstItem="dqO-qK-S2l" firstAttribute="width" secondItem="0Zk-pG-4Dg" secondAttribute="width" id="4XM-rR-VwI"/>
                             <constraint firstItem="3Lw-LL-vO4" firstAttribute="height" secondItem="0Zk-pG-4Dg" secondAttribute="height" multiplier="0.12" id="61X-nB-x90"/>
-                            <constraint firstItem="GUu-mo-6bz" firstAttribute="width" secondItem="0Zk-pG-4Dg" secondAttribute="width" id="9sG-HS-qBa"/>
-                            <constraint firstItem="GUu-mo-6bz" firstAttribute="top" secondItem="3Lw-LL-vO4" secondAttribute="bottom" id="Ihv-TT-f3v"/>
+                            <constraint firstItem="dqO-qK-S2l" firstAttribute="top" secondItem="3Lw-LL-vO4" secondAttribute="bottom" id="MGG-24-2wo"/>
+                            <constraint firstItem="dqO-qK-S2l" firstAttribute="centerX" secondItem="0Zk-pG-4Dg" secondAttribute="centerX" id="Mot-9y-lvn"/>
                             <constraint firstItem="3Lw-LL-vO4" firstAttribute="centerX" secondItem="0Zk-pG-4Dg" secondAttribute="centerX" id="Rba-Kr-0IE"/>
                             <constraint firstItem="3Lw-LL-vO4" firstAttribute="width" secondItem="0Zk-pG-4Dg" secondAttribute="width" id="bHJ-DM-jez"/>
+                            <constraint firstItem="dqO-qK-S2l" firstAttribute="height" secondItem="0Zk-pG-4Dg" secondAttribute="height" multiplier="0.1" id="bYY-ga-Cbz"/>
                             <constraint firstItem="3Lw-LL-vO4" firstAttribute="top" secondItem="0Zk-pG-4Dg" secondAttribute="topMargin" id="bfv-vx-NQv"/>
-                            <constraint firstItem="GUu-mo-6bz" firstAttribute="centerX" secondItem="0Zk-pG-4Dg" secondAttribute="centerX" id="nEp-F1-1U0"/>
+                            <constraint firstItem="gIP-LF-LJg" firstAttribute="top" secondItem="GUu-mo-6bz" secondAttribute="bottom" id="ecG-bO-6X1"/>
+                            <constraint firstAttribute="trailing" secondItem="GUu-mo-6bz" secondAttribute="trailing" id="fK6-bJ-Wz4"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NNy-B8-cDW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="823" y="37"/>
+            <point key="canvasLocation" x="821.60000000000002" y="36.431784107946029"/>
         </scene>
     </scenes>
 </document>

@@ -7,18 +7,26 @@
 //
 
 import UIKit
+import Kingfisher
 
 class videoTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var image: UIImageView!
-    @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var description: UILabel!
-    @IBOutlet weak var message: UILabel!
     
+    @IBOutlet weak var thumbnail: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        titleLabel.setDynamicFont()
+        descriptionLabel.setDynamicFont()
+    }
+    
+    func setup(video: Video){
+        if let thumbnail = video.thumbnail {
+            self.thumbnail.kf.setImage(with: URL(string: thumbnail))
+        }
+        self.titleLabel.text = video.title
+        self.descriptionLabel.text = video.description
     }
     
 }

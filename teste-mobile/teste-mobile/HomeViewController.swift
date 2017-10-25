@@ -48,7 +48,10 @@ extension HomeViewController: ListVideosView {
     func setListVideos(videos: [Video]?, message: String?) {
         HUD.hide()
         if videos?.count != 0 {
-            
+//
+            if let storyboard = UIStoryboard(name: "Videos", bundle: nil).instantiateInitialViewController() {
+                self.present(storyboard, animated: true, completion: nil)
+            }
         } else {
             present(Alert.showMessage(title: "Ops!", message: "Erro, tente novamente."), animated: true, completion: nil)
         }
