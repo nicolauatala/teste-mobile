@@ -10,6 +10,7 @@ import Foundation
 
 let kBaseUrl = "https://www.googleapis.com/youtube/v3/search?"
 let kKeyAPI = "AIzaSyCkqNWJlR1YVyPuPweI7aeFoGJsNJIAlas"
-let kPathToListVideos = kBaseUrl + "part=id,snippet&q=piratas&key=" + kKeyAPI
-let kURLListVideos = kBaseUrl + kPathToListVideos
 let kURLListDetailVideo = kBaseUrl
+let kPathToListVideos = { (keywords: String) -> String in
+    return kBaseUrl + "part=id,snippet&q=" + keywords + "&key=" + kKeyAPI
+}

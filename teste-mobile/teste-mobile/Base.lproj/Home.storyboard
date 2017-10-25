@@ -84,10 +84,19 @@
                     <connections>
                         <outlet property="searchButton" destination="j7A-sn-QpB" id="AWV-cE-XOm"/>
                         <outlet property="searchTextField" destination="7Ir-Ul-AnO" id="l43-em-rzg"/>
+                        <segue destination="IFN-6u-FR1" kind="presentation" identifier="toVideoSegue" id="0MT-Kn-cVy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Videos-->
+        <scene sceneID="TGE-bh-yDM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Videos" id="IFN-6u-FR1" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kAX-bV-wlz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="690" y="121"/>
         </scene>
     </scenes>
     <resources>

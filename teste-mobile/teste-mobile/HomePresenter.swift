@@ -22,7 +22,7 @@ class HomePresenter {
     }
     
     func getVideos(with keywords: String) {
-        HomeService.getListVideos { (videos, message) in
+        HomeService.getListVideos(keywords: keywords) { (videos, message) in
             self.listVideosView?.setListVideos(videos: videos, message: message)
         }
     }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 protocol SetListVideos: NSObjectProtocol {
     func setListVideos(videos: [Video])
@@ -15,27 +16,44 @@ protocol SetListVideos: NSObjectProtocol {
 class VideosViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchTextField: UITextField!
     
+    fileprivate let presenter = HomePresenter()
     var listVideos = [Video]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.hideKeyboardWhenTappedAround()
         tableView.register(UINib(nibName: "videoTableViewCell", bundle: nil), forCellReuseIdentifier: "videoCell")
-        
-        let video = Video()
-        video.title = "Primeiro video"
-        video.description = "JOUansiduabsdiunas diau sdpiuabs idhbashid aisd asdasd. aoiusd iays d;ias dilyba sd."
-        video.thumbnail = "https://i.ytimg.com/vi/dRCJ9NeVsus/sddefault.jpg"
-        listVideos.append(video)
-        // Do any additional setup after loading the view.
+        presenter.setViewDelegate(self)
+    }
+    
+    @IBAction func search(_ sender: Any) {
+        HUD.show(.rotatingImage(#imageLiteral(resourceName: "progress")))
+        if let text = searchTextField.text {
+            if !text.isEmpty {
+                if let encodingText = text.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) {
+                    presenter.getVideos(with: encodingText)
+                }
+            } else {
+                HUD.hide()
+                present(Alert.showMessage(title: "Campo vazio", message: "Para continuar, informe as palavras chaves."), animated: true, completion: nil)
+            }
+        }
     }
     
 }
 
-extension VideosViewController: SetListVideos {
-    func setListVideos(videos: [Video]) {
-        listVideos = videos
+extension VideosViewController: ListVideosView {
+    func setListVideos(videos: [Video]?, message: String?) {
+        HUD.hide()
+        if videos?.count != 0 {
+            self.listVideos.removeAll()
+            self.listVideos = videos!
+            self.tableView.reloadData()
+        } else {
+            present(Alert.showMessage(title: "Ops!", message: "Erro, tente novamente."), animated: true, completion: nil)
+        }
     }
 }
 

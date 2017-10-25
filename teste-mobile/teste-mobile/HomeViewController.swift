@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var searchButton: UIButton!
     
     fileprivate let presenter = HomePresenter()
+    var listVideos = [Video]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,10 +33,11 @@ class HomeViewController: UIViewController {
 
     @IBAction func search(_ sender: Any) {
         HUD.show(.rotatingImage(#imageLiteral(resourceName: "progress")))
-        
         if let text = searchTextField.text {
             if !text.isEmpty {
-                presenter.getVideos(with: text)
+                if let encodingText = text.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) {
+                    presenter.getVideos(with: encodingText)
+                }
             } else {
                 HUD.hide()
                 present(Alert.showMessage(title: "Campo vazio", message: "Para continuar, informe as palavras chaves."), animated: true, completion: nil)
@@ -48,11 +50,18 @@ extension HomeViewController: ListVideosView {
     func setListVideos(videos: [Video]?, message: String?) {
         HUD.hide()
         if videos?.count != 0 {
-            if let storyboard = UIStoryboard(name: "Videos", bundle: nil).instantiateInitialViewController() {
-                self.present(storyboard, animated: true, completion: nil)
-            }
+            self.listVideos = videos!
+            performSegue(withIdentifier: "toVideoSegue", sender: nil)
         } else {
             present(Alert.showMessage(title: "Ops!", message: "Erro, tente novamente."), animated: true, completion: nil)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toVideoSegue" {
+            if let viewController = segue.destination as? VideosViewController {
+               viewController.listVideos = self.listVideos
+            }
         }
     }
 }

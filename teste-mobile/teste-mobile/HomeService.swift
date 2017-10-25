@@ -10,8 +10,8 @@ import Foundation
 import SwiftyJSON
 
 class HomeService {
-    static func getListVideos(completion: @escaping (_ chats: [Video]?, _ message: String?) -> Void) {
-        APIManager.getRequest(forUrl: kPathToListVideos) { (success, message, result) in
+    static func getListVideos(keywords: String, completion: @escaping (_ chats: [Video]?, _ message: String?) -> Void) {
+        APIManager.getRequest(forUrl: kPathToListVideos(keywords)) { (success, message, result) in
             var videos = [Video]()
             if let result = result {
                 let arrayData = JSON(result)["items"].array
