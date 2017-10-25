@@ -15,6 +15,7 @@ protocol ListVideosView: NSObjectProtocol {
 class HomePresenter {
     
     weak private var listVideosView: ListVideosView?
+    var videos = [Video]()
     
     func setViewDelegate(_ view: ListVideosView){
         self.listVideosView = view

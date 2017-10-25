@@ -27,6 +27,7 @@
 		89FFE1031F9FE6BD007C44CF /* Videos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89FFE1011F9FE6BD007C44CF /* Videos.storyboard */; };
 		89FFE10A1FA00E3A007C44CF /* videoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FFE1081FA00E3A007C44CF /* videoTableViewCell.swift */; };
 		89FFE10B1FA00E3A007C44CF /* videoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89FFE1091FA00E3A007C44CF /* videoTableViewCell.xib */; };
+		89FFE10D1FA01CE3007C44CF /* VideosPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FFE10C1FA01CE3007C44CF /* VideosPresenter.swift */; };
 		E23406D554186615E42FDD14 /* Pods_teste_mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4158AD92521240D37651C8F1 /* Pods_teste_mobile.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		89FFE1021F9FE6BD007C44CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Videos.storyboard; sourceTree = "<group>"; };
 		89FFE1081FA00E3A007C44CF /* videoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = videoTableViewCell.swift; sourceTree = "<group>"; };
 		89FFE1091FA00E3A007C44CF /* videoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = videoTableViewCell.xib; sourceTree = "<group>"; };
+		89FFE10C1FA01CE3007C44CF /* VideosPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosPresenter.swift; sourceTree = "<group>"; };
 		BE76D76D81DA4D90ED5B85A2 /* Pods-teste-mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-teste-mobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-teste-mobile/Pods-teste-mobile.debug.xcconfig"; sourceTree = "<group>"; };
 		CCBDF50F833B636DC77EFCD9 /* Pods-teste-mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-teste-mobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-teste-mobile/Pods-teste-mobile.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				890A36231F9FDF6700AA1089 /* VideosViewController.swift */,
+				89FFE10C1FA01CE3007C44CF /* VideosPresenter.swift */,
 				89FFE1011F9FE6BD007C44CF /* Videos.storyboard */,
 				89FFE1081FA00E3A007C44CF /* videoTableViewCell.swift */,
 				89FFE1091FA00E3A007C44CF /* videoTableViewCell.xib */,
@@ -316,6 +319,7 @@
 				890A36131F9FBCD300AA1089 /* ViewUtil.swift in Sources */,
 				890A35F31F9FB72300AA1089 /* AppDelegate.swift in Sources */,
 				890A36151F9FBDD800AA1089 /* HomeViewController.swift in Sources */,
+				89FFE10D1FA01CE3007C44CF /* VideosPresenter.swift in Sources */,
 				890A361D1F9FC48400AA1089 /* HomeService.swift in Sources */,
 				890A36121F9FBCD300AA1089 /* UILabel+Extension.swift in Sources */,
 				890A360E1F9FBCD300AA1089 /* NavigationBar.swift in Sources */,
