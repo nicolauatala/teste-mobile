@@ -17,6 +17,7 @@ class VideosViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var navigationBar: NavigationBar!
     
     fileprivate let presenter = HomePresenter()
     var listVideos = [Video]()
@@ -24,6 +25,8 @@ class VideosViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationBar.image.image = #imageLiteral(resourceName: "madeinweb")
+        navigationBar.delegate = self
         self.hideKeyboardWhenTappedAround()
         tableView.register(UINib(nibName: "videoTableViewCell", bundle: nil), forCellReuseIdentifier: "videoCell")
         presenter.setViewDelegate(self)
@@ -64,6 +67,12 @@ class VideosViewController: UIViewController {
         
     }
     
+}
+
+extension VideosViewController: NavigationBarDelegate {
+    func centerButtonTouchUpInside() {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 
 extension VideosViewController: ListVideosView {

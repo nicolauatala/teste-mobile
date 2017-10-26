@@ -9,7 +9,7 @@
 import Foundation
 
 protocol DetailVideoView: NSObjectProtocol {
-    func setDetailVideo(videoDetail: Video, message: String?)
+    func setDetailVideo(videoDetail: Details, message: String?)
 }
 
 class DetailVideoPresenter {

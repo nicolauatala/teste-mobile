@@ -53,7 +53,7 @@ extension HomeViewController: ListVideosView {
             self.listVideos = videos!
             performSegue(withIdentifier: "toVideoSegue", sender: nil)
         } else {
-            present(Alert.showMessage(title: "Ops!", message: "Erro, tente novamente."), animated: true, completion: nil)
+            present(Alert.showMessage(title: "Ops!", message: message), animated: true, completion: nil)
         }
     }
     

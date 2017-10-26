@@ -10,14 +10,15 @@ import Foundation
 import SwiftyJSON
 
 class DetailVideoService {
-    static func getDetail(id: String, completion: @escaping (_ video: Video?, _ message: String?) -> Void) {
+    static func getDetail(id: String, completion: @escaping (_ video: Details?, _ message: String?) -> Void) {
         APIManager.getRequest(forUrl: pathToDetailVideo(id), completion: { (success, message, result) in
-            var video = Video()
+            var details = Details()
             if let result = result {
-                let arrayData = JSON(result)["items"].array
-
+                let data = JSON(result)["items"].array
+                let setDetails = Details(with: data?[0])
+                details = setDetails
             }
-            completion(video, message)
+            completion(details, message)
         })
     }
 }
