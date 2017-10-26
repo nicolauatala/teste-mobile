@@ -11,11 +11,13 @@ import UIKit
 protocol NavigationBarDelegate: NSObjectProtocol {
     func leftButtonTouchUpInside()
     func rightButtonTouchUpInside()
+    func centerButtonTouchUpInside()
 }
 
 extension NavigationBarDelegate {
     func leftButtonTouchUpInside() {}
     func rightButtonTouchUpInside() {}
+    func centerButtonTouchUpInside() {}
 }
 
 class NavigationBar: UIView {
@@ -25,6 +27,7 @@ class NavigationBar: UIView {
     
     @IBOutlet weak var leftImageView: UIImageView!
     @IBOutlet weak var rightImageView: UIImageView!
+    @IBOutlet weak var image: UIImageView!
     
     weak var delegate: NavigationBarDelegate?
     
@@ -47,4 +50,7 @@ class NavigationBar: UIView {
         delegate?.rightButtonTouchUpInside()
     }
     
+    @IBAction func centerButtonTouchUpInside(_ sender: Any) {
+        delegate?.centerButtonTouchUpInside()
+    }
 }

@@ -61,50 +61,54 @@ class APIManager {
     
     private static func request(_ url: String, forMethod method: HTTPMethod, withParameters parameters: [String : Any]? = nil, withEncoding encoding:ParameterEncoding=URLEncoding.default, withHeaders headers: [String : String]? = nil, completion: @escaping (_ success: Bool, _ message: String?, _ response: Dictionary<String, AnyObject>?) -> Void) {
         
-        Alamofire.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers).responseJSON { (response: DataResponse<Any>) in
-            switch  response.result {
-                
-            case .success:
-                
-                let data = response.result.value as! Dictionary<String, AnyObject>
-                
-                switch response.response!.statusCode {
+        if NetworkReachability.isReachable() {
+            Alamofire.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers).responseJSON { (response: DataResponse<Any>) in
+                switch  response.result {
                     
-                case 200:
+                case .success:
                     
-                    //If have an error
-                    if let haveError = data[kKeyWarningResponse] {
+                    let data = response.result.value as! Dictionary<String, AnyObject>
+                    
+                    switch response.response!.statusCode {
                         
-                        var messageError = ""
+                    case 200:
                         
-                        if let errors = haveError[kKeyErrorResponse] as? Array<Dictionary<String,AnyObject>> {
+                        //If have an error
+                        if let haveError = data[kKeyWarningResponse] {
                             
-                            for error in errors {
-                                if let errorMessage = error[kKeyTextErrorResponse] as? String {
-                                    messageError += errorMessage
+                            var messageError = ""
+                            
+                            if let errors = haveError[kKeyErrorResponse] as? Array<Dictionary<String,AnyObject>> {
+                                
+                                for error in errors {
+                                    if let errorMessage = error[kKeyTextErrorResponse] as? String {
+                                        messageError += errorMessage
+                                    }
                                 }
+                                
                             }
                             
+                            if (messageError.characters.count > 0) {
+                                completion(false, messageError,nil)
+                                return
+                            }
                         }
                         
-                        if (messageError.characters.count > 0) {
-                            completion(false, messageError,nil)
-                            return
-                        }
+                        //Return data
+                        completion(true,nil,data)
+                        
+                    default:
+                        
+                        completion(false,kMessageServerUnavailable,nil)
                     }
                     
-                    //Return data
-                    completion(true,nil,data)
+                case .failure(_):
                     
-                default:
-                    
-                    completion(false,kMessageServerUnavailable,nil)
+                    completion(false,kMessageNetworkError,nil)
                 }
-                
-            case .failure(_):
-                
-                completion(false,kMessageNetworkError,nil)
             }
+        } else {
+            completion(false,kMessageNetworkError,nil)
         }
     }
 }
