@@ -9,21 +9,20 @@
 import Foundation
 
 protocol DetailVideoView: NSObjectProtocol {
-    func setDetailVideo(videos: Video, message: String?)
+    func setDetailVideo(videoDetail: Video, message: String?)
 }
 
 class DetailVideoPresenter {
     
-    weak private var listVideosView: ListVideosView?
-    var videos = [Video]()
+    weak private var detailView: DetailVideoView?
     
-    func setViewDelegate(_ view: ListVideosView){
-        self.listVideosView = view
+    func setViewDelegate(_ view: DetailVideoView){
+        self.detailView = view
     }
     
-    func getVideos(with keywords: String) {
-        HomeService.getListVideos(keywords: keywords) { (videos, message) in
-            self.listVideosView?.setListVideos(videos: videos, message: message)
+    func getDetail(with id: String) {
+        DetailVideoService.getDetail(id: id) { (videoDetail, message) in
+            self.detailView?.setDetailVideo(videoDetail: videoDetail!, message: message)
         }
     }
 }

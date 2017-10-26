@@ -9,19 +9,22 @@
 import UIKit
 import PKHUD
 
-class DescriptionVideoViewController: UIViewController {
+class DetailVideoViewController: UIViewController {
 
     @IBOutlet weak var navigationBar: NavigationBar!
     @IBOutlet weak var webView: UIWebView!
     
+    fileprivate let presenter = DetailVideoPresenter()
     var videoDetail: Video?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         webView.delegate = self
+        presenter.setViewDelegate(self)
         if let videoId = videoDetail?.videoId {
             let url = URL(string: "https://www.youtube.com/embed/\(videoId)")
             webView.loadRequest(URLRequest(url: url!))
+            self.presenter.getDetail(with: videoId)
         }
     }
     
@@ -30,7 +33,13 @@ class DescriptionVideoViewController: UIViewController {
     }
 }
 
-extension DescriptionVideoViewController: UIWebViewDelegate {
+extension DetailVideoViewController: DetailVideoView {
+    func setDetailVideo(videoDetail: Video, message: String?) {
+        print(#function)
+    }
+}
+
+extension DetailVideoViewController: UIWebViewDelegate {
     func webViewDidFinishLoad(_ webView: UIWebView) {
         HUD.hide()
     }

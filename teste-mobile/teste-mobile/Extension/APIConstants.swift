@@ -8,9 +8,13 @@
 
 import Foundation
 
-let kBaseUrl = "https://www.googleapis.com/youtube/v3/search?"
+let kBaseUrl = "https://www.googleapis.com/youtube/v3/"
 let kKeyAPI = "AIzaSyCkqNWJlR1YVyPuPweI7aeFoGJsNJIAlas"
 let kURLListDetailVideo = kBaseUrl
-let kPathToListVideos = { (keywords: String) -> String in
-    return kBaseUrl + "part=id,snippet&q=" + keywords + "&key=" + kKeyAPI
+let pathToListVideos = { (keywords: String) -> String in
+    return kBaseUrl + "search?part=id,snippet&q=" + keywords + "&type=video&key=" + kKeyAPI
+}
+
+let pathToDetailVideo = {(id: String) -> String in
+    return kBaseUrl + "videos?id=" + id + "&part=snippet,statistics&key=" + kKeyAPI
 }
