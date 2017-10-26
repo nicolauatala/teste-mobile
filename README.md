@@ -7,4 +7,4 @@ Desenvolver uma aplicação Mobile para iOS
 - Abra o terminar e dentro do diretório do projeto, digite: pod install
 
 ## Demo do projeto
-![](http://uabit.com.br/public_html/wp-content/uploads/simulator.gif)
+![Alt Text](http://uabit.com.br/public_html/wp-content/uploads/simulator.gif)
