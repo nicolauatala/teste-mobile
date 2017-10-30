@@ -28,6 +28,7 @@ class DetailVideoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationBar.image.image = #imageLiteral(resourceName: "madeinweb")
+        navigationBar.leftImageView.image = #imageLiteral(resourceName: "voltar")
         navigationBar.delegate = self
         webView.delegate = self
         presenter.setViewDelegate(self)
@@ -53,7 +54,7 @@ class DetailVideoViewController: UIViewController {
 }
 
 extension DetailVideoViewController: NavigationBarDelegate{
-    func centerButtonTouchUpInside() {
+    func leftButtonTouchUpInside() {
         self.dismiss(animated: true, completion: nil)
     }
 }

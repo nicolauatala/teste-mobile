@@ -96,7 +96,7 @@
                 <viewControllerPlaceholder storyboardName="Videos" id="IFN-6u-FR1" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kAX-bV-wlz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="690" y="121"/>
+            <point key="canvasLocation" x="714" y="137"/>
         </scene>
     </scenes>
     <resources>
