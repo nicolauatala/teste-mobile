@@ -1,10 +1,10 @@
-# Teste Madeinweb: Mobile - Nicolau Atala
-Desenvolver uma aplicação Mobile para iOS
+# Madeinweb Challenge
+	##[overview](https://bitbucket.org/madeinweb/teste-mobile/overview)
 
 ## Instruções
 
 - Faça um clone ou download do projeto.
-- Abra o terminar e dentro do diretório do projeto, digite: pod install
+- No diretório do projeto, pod install.
 
 ## Demo do projeto
 ![Alt Text](http://uabit.com.br/public_html/wp-content/uploads/simulator.gif)
