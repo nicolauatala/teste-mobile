@@ -154,10 +154,9 @@
 		890A36251F9FE27500AA1089 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				890A36161F9FBDE100AA1089 /* Home.storyboard */,
-				890A361A1F9FC47700AA1089 /* HomePresenter.swift */,
-				890A361C1F9FC48400AA1089 /* HomeService.swift */,
-				890A36141F9FBDD800AA1089 /* HomeViewController.swift */,
+				89E6A0F7202D265F005D6D42 /* Service */,
+				89E6A0F6202D263F005D6D42 /* Presenter */,
+				89E6A0F5202D262A005D6D42 /* View */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -165,14 +164,55 @@
 		890A36291F9FE30F00AA1089 /* Videos */ = {
 			isa = PBXGroup;
 			children = (
-				892287FA1FA4AFCD007BC7B9 /* FirstViewController.swift */,
-				890A36231F9FDF6700AA1089 /* VideosViewController.swift */,
-				89FFE10C1FA01CE3007C44CF /* VideosPresenter.swift */,
-				89FFE1011F9FE6BD007C44CF /* Videos.storyboard */,
-				89FFE1081FA00E3A007C44CF /* videoTableViewCell.swift */,
-				89FFE1091FA00E3A007C44CF /* videoTableViewCell.xib */,
+				89E6A0F9202D268A005D6D42 /* Presenter */,
+				89E6A0F8202D2668005D6D42 /* View */,
 			);
 			name = Videos;
+			sourceTree = "<group>";
+		};
+		89E6A0F5202D262A005D6D42 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				890A36161F9FBDE100AA1089 /* Home.storyboard */,
+				890A36141F9FBDD800AA1089 /* HomeViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		89E6A0F6202D263F005D6D42 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				890A361A1F9FC47700AA1089 /* HomePresenter.swift */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		89E6A0F7202D265F005D6D42 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				890A361C1F9FC48400AA1089 /* HomeService.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		89E6A0F8202D2668005D6D42 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				89FFE1011F9FE6BD007C44CF /* Videos.storyboard */,
+				89FFE1091FA00E3A007C44CF /* videoTableViewCell.xib */,
+				89FFE1081FA00E3A007C44CF /* videoTableViewCell.swift */,
+				892287FA1FA4AFCD007BC7B9 /* FirstViewController.swift */,
+				890A36231F9FDF6700AA1089 /* VideosViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		89E6A0F9202D268A005D6D42 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				89FFE10C1FA01CE3007C44CF /* VideosPresenter.swift */,
+			);
+			name = Presenter;
 			sourceTree = "<group>";
 		};
 		89FFE1101FA11170007C44CF /* Description */ = {
